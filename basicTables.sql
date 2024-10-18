@@ -1,21 +1,17 @@
 ATTACH DATABASE 'Alexandria.db' AS 'Alexandria';
 
-CREATE TABLE 'Alexandria.books' AS books (
-	'id' int NOT NULL AUTO_INCREMENT,
-	'owner_id' int,
-	'title' varchar(255),
-	'author' varchar(255),
-	'category' varchar(255),
-	'copies' int,
-	PRIMARY KEY(id)
+CREATE TABLE [Alexandria].owners (
+	id INTEGER PRIMARY KEY,
+	first_name TEXT NOT NULL,
+	last_name TEXT NOT NULL
+);
+
+CREATE TABLE [Alexandria].books (
+	id INTEGER PRIMARY KEY,
+	owner_id INTEGER,
+	title TEXT NOT NULL,
+	author TEXT,
+	category TEXT,
+	copies INTEGER,
 	FOREIGN KEY(owner_id)REFERENCES owners(id)
-);
-
-CREATE TABLE 'Alexandria.owners' AS owners (
-	'id' int NOT NULL AUTO_INCREMENT,
-	'first_name' varchar(255),
-	'last_name' varchar(255)
-	PRIMARY KEY(id)
-
-);
-	
+);	
