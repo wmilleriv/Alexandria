@@ -1,3 +1,9 @@
+const Books=[{
+	title:"",
+	author: "",
+	owner: ""
+}];
+
 const titleSearch = document.getElementById('search-by-title');
 
 function cleanInputString(str){
